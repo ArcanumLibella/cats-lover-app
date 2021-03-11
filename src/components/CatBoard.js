@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import useCatImg from '../useCatImg'
 
 export default function CatBoard() {
-    const [catsImage, setCatsImage] = useState()
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("https://api.thecatapi.com/v1/images/search")
-            const data = await response.json();
-            console.log(data)
-            setCatsImage(data[0].url)
-        } 
-
-        fetchData()
-        
-    }, [])
-
+    const catsURL = useCatImg()
 
     return (
         <section className="catBoard">
             <div className="container flex align-center justify-center mx-auto mt-8 max-w-screen-lg">
                 <img 
-                    src={catsImage} 
+                    src={catsURL} 
                     alt="Cute cat"
                     className="border-8 border-red-400"
                 />
