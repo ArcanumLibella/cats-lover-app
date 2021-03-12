@@ -10,3 +10,41 @@
         @apply outline-none;
     }
 }
+
+.App {
+    cursor: none;
+}
+
+.myCursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid darkred;
+    border-radius: 50%; */
+    pointer-events: none;
+    font-size: 24px;
+}
+
+.myCursor::after {
+    content: '🐱';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.expand {
+    animation: clickEffect 0.2 linear;
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
