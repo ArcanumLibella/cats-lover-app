@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CatBoard from './components/CatBoard'
 import Modale from './components/Modale'
+import Counter from './components/Counter'
 import Header from './layout/Header'
 
 function App() {
@@ -53,6 +54,8 @@ function App() {
       {toggleModale ?
         <Modale handleModale={closeModale}/>
       : ''}
+
+      <Counter />
 
     </div>
   );
